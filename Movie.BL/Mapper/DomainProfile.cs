@@ -6,12 +6,13 @@ namespace Movie.BL.Mapper
     {
         public DomainProfile()
         {
-            CreateMap<GenerDTO, Gener>().ReverseMap();
+            CreateMap<GenersDTO, Gener>().ReverseMap();
             CreateMap<UpdateGenerDTO, Gener>().ReverseMap();
             CreateMap<GenerMovieDTO, Gener>().ForMember(
                 i => i.Movies, c => c.MapFrom(m => m.MovieDTO)
                 ).ReverseMap();
             CreateMap<Movies, MovieDTO>().ReverseMap();
+            CreateMap<Movies, UpdateMovieDTO>().ReverseMap();
         }
     }
 }

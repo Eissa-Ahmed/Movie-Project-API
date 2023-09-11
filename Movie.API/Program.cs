@@ -12,7 +12,7 @@ builder.Services.AddCors();
 
 #region Dependency Injection
 builder.Services.AddScoped<IGener, GenerRepo>();
-/*builder.Services.AddScoped<IMovie, MovieRepo>();*/
+builder.Services.AddScoped<IMovie, MovieRepo>();
 #endregion
 
 #region Auto Mapper

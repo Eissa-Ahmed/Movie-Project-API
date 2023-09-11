@@ -34,21 +34,21 @@ namespace Movie.BL.Repository
             return model;
         }
 
-        public async Task<GenerDTO?> DeleteGener(int id)
+        public async Task<GenersDTO?> DeleteGener(int id)
         {
             var item = await dbContext.Geners.SingleOrDefaultAsync(x => x.Id == id);
             if (item == null)
                 return null;
             dbContext.Geners.Remove(item);
             await dbContext.SaveChangesAsync();
-            return mapper.Map<GenerDTO>(item);
+            return mapper.Map<GenersDTO>(item);
 
         }
 
-        public async Task<IEnumerable<GenerDTO>> GetAllGener()
+        public async Task<IEnumerable<GenersDTO>> GetAllGener()
         {
             var items = await dbContext.Geners.ToListAsync();
-            var data = mapper.Map<IEnumerable<GenerDTO>>(items);
+            var data = mapper.Map<IEnumerable<GenersDTO>>(items);
             return data;
         }
 

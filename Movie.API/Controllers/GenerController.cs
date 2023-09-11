@@ -25,7 +25,7 @@ namespace Movie.API.Controllers
             try
             {
                 var items = await generServices.GetAllGener();
-                return Ok(new ResponseModel<IEnumerable<GenerDTO>>()
+                return Ok(new ResponseModel<IEnumerable<GenersDTO>>()
                 {
                     Code = 200,
                     Status = true,
@@ -35,7 +35,7 @@ namespace Movie.API.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(new ResponseModel<IEnumerable<GenerDTO>>()
+                return BadRequest(new ResponseModel<IEnumerable<GenersDTO>>()
                 {
                     Code = 400,
                     Status = false,
@@ -73,7 +73,7 @@ namespace Movie.API.Controllers
         {
             var item = await generServices.DeleteGener(id);
             if (item is null)
-                return BadRequest(new ResponseModel<GenerDTO>()
+                return BadRequest(new ResponseModel<GenersDTO>()
                 {
                     Code = 400,
                     Status = false,
@@ -81,7 +81,7 @@ namespace Movie.API.Controllers
                 });
 
 
-            return Ok(new ResponseModel<GenerDTO>()
+            return Ok(new ResponseModel<GenersDTO>()
             {
                 Code = 200,
                 Status = true,

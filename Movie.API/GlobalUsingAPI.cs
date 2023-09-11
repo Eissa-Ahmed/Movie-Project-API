@@ -7,5 +7,6 @@ global using Movie.BL.Model.GenerDTO.GenerDTO;
 global using Movie.BL.Repository;
 global using Movie.BL.Response;
 global using Movie.DAL.Database;
+global using Movie.BL.Model.Movie;
 
 
